@@ -28,8 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
-    'soju',
     'survey',
+    'soju',
+
 ]
 
 MIDDLEWARE = [
