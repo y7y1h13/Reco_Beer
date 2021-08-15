@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Survey(models.Model):
@@ -8,3 +9,6 @@ class Survey(models.Model):
 
     def __self__(self):
         return self.category
+
+    def get_absolute_url(self):
+        return reverse('survey:survey_result')

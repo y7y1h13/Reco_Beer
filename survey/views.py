@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
+from soju.models import *
 
 
 def save_survey(request):
@@ -19,4 +20,10 @@ def save_survey(request):
 
             )
             survey.save()
+            return survey_result(request)
     return render(request, 'survey/survey.html')
+
+
+def survey_result(request):
+    beers = Beer.objects.all()
+    return render(request, 'survey/result.html', {'beers': beers})
