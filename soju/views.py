@@ -9,3 +9,5 @@ def get_absolute_url(request):
     #적어야함
 
     return render(request, 'soju/detail.html', {'beers': beers})
+
+

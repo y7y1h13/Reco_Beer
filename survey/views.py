@@ -5,18 +5,22 @@ from soju.models import *
 
 def save_survey(request):
     if request.method == 'GET':
-        category = request.GET.get('category', None)
-        ABV = request.GET.get('ABV', None)
+        category = request.GET.getlist('category', None)
+        ABV1 = request.GET.get('ABV1', None)
+        ABV2 = request.GET.get('ABV2', None)
         sugar = request.GET.get('sugar', None)
+        sanmi = request.GET.get('sanmi', None)
 
         res_data = ''
-        if not (category and ABV and sugar):
-            res_data = '값을 선택해 주세요!'
+        if not (category and ABV1 and ABV2 and sugar):
+            res_data = '값을 입력해 주세요!'
         else:
             survey = Survey(
                 category=category,
-                ABV=ABV,
-                sugar=sugar
+                ABV1=ABV1,
+                ABV2=ABV2,
+                sugar=sugar,
+                sanmi=sanmi
 
             )
             survey.save()
