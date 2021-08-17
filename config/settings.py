@@ -71,10 +71,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sojusolodb',
+        'NAME': 'sojudb',
         'USER': 'admin',
-        'PASSWORD': 'dbgusals1',
-        'HOST': 'sojusolo.c6f9olbkzmcs.ap-northeast-2.rds.amazonaws.com',
+        'PASSWORD': 'soju1234',
+        'HOST': 'soju.c6f9olbkzmcs.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3306'
     }
 
@@ -124,7 +124,7 @@ STATIC_URL = '/static/'
 AWS_ACCESS_KEY_ID = 'AKIAXEABGLSENS25FYOK'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_REGION = 'ap-northeast-2'
-AWS_STORAGE_BUCKET_NAME = 'sojusolo'
+AWS_STORAGE_BUCKET_NAME = 'soju1'
 
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
 
