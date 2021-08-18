@@ -11,3 +11,5 @@ def get_absolute_url(request):
     return render(request, 'soju/detail.html', {'beers': beers})
 
 
+def home_url(request):
+    return render(request, 'soju/index.html')

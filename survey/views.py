@@ -1,33 +1,20 @@
-from django.shortcuts import render, redirect
-from .models import *
+from django.shortcuts import render
 from soju.models import *
-
-
-def save_survey(request):
-    if request.method == 'GET':
-        category = request.GET.getlist('category', None)
-        ABV1 = request.GET.get('ABV1', None)
-        ABV2 = request.GET.get('ABV2', None)
-        sugar = request.GET.get('sugar', None)
-        sanmi = request.GET.get('sanmi', None)
-
-        res_data = ''
-        if not (category and ABV1 and ABV2 and sugar):
-            res_data = '값을 입력해 주세요!'
-        else:
-            survey = Survey(
-                category=category,
-                ABV1=ABV1,
-                ABV2=ABV2,
-                sugar=sugar,
-                sanmi=sanmi
-
-            )
-            survey.save()
-            return survey_result(request)
-    return render(request, 'survey/survey.html')
+from survey.models import Survey
+from django.db.models.query_utils import Q
 
 
 def survey_result(request):
+    f = request.GET.getlist('f')
     beers = Beer.objects.all()
-    return render(request, 'survey/result.html', {'beers': beers})
+    if f:
+        print(f)
+        query = Q()
+        for i in f:
+            query = query | Q(category__icontains=i)
+            beers = beers.filter(query)
+    return render(request, 'survey/result.html', {'beers':beers})
+
+
+def search(request):
+    return render(request, 'survey/survey.html')
