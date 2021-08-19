@@ -730,6 +730,7 @@ body {
 .services__skill-gold-line {
   width: 70%;
   height: 5px;
+  background: #E9CF49;
 }
 
 .services__skill-gold-line--90 {
@@ -2064,7 +2065,6 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-          //속도 조절
   -webkit-animation: runningLine 10s linear infinite;
           animation: runningLine 10s linear infinite;
   -webkit-animation-play-state: running;
@@ -2165,7 +2165,7 @@ body {
 }
 
 .cases__card:hover {
-  cursor: url("../img/cases/cursor.ico") 62 62, pointer;
+  cursor: url("../img/cases/cursor.jpg") 62 62, pointer;
 }
 
 .cases__card:hover img {
@@ -2884,6 +2884,7 @@ body {
 .nav-widget__line-gold {
   position: absolute;
   height: 20%;
+  background-color: #E9CF49;
   width: 2px;
   -webkit-transition: height .3s ease;
   transition: height .3s ease;

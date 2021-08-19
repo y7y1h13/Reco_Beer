@@ -175,8 +175,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.removeEventListener('scroll', onScroll)
             }
 
-            const anchors = ['cases', 'about', 'services', 'partners', 'awards', 'testimonials', 'blog', 'contacts']
-            const labels = ['Selected works', 'about me', 'services', 'My clients', 'awards', 'testimonials', 'My insights', 'get in touch']
+            const anchors = ['home', 'cases', 'about', 'services', 'partners', 'awards', 'testimonials', 'blog', 'contacts']
+            const labels = ['home', 'Selected works', 'about me', 'services', 'My clients', 'awards', 'testimonials', 'My insights', 'get in touch']
 
             function setLabel(index) {
                 const label = labels[index];
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const nextAnchor = anchors[nextIndex];
                 const nextActiveSection = document.querySelector(`.section-${nextAnchor}`);
                 const activeSection = document.querySelector(`.section-${anchor}`);
-// 불투명도 설정(다음 화면 으로 넘어갈때)
+
                 if (nextActiveSection.classList.contains('active')) {
                     nextActiveSection.querySelector('.section-main').style.opacity = "1";
                     activeSection.querySelector('.section-main').style.opacity = "0";
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('preloader').style.display = 'none';
     }
 
-
+    
 
     setTimeout(disabledPreloader, 1200);
 
@@ -332,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 minLength: 'My custom message about only minLength rule'
               },
               email: 'My custom message about error (one error message for all rules)'
-            },
+            },  
             },
         })
     }

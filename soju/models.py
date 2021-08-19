@@ -40,7 +40,7 @@ class Beer(models.Model):
 
     # url 넘겨줄 때 views.py 의 beer_detail 이용하고 id와 slug 를 넘겨준다.
     def get_absolute_url(self):
-        return reverse('shop:beer_detail', args=[self.id])
+        return reverse('soju:beerDetail', args=[self.name])
 
 
 # class User(models.Model):

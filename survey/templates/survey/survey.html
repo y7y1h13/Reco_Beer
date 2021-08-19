@@ -18,12 +18,48 @@
         </div>
         <div class= "row">
             <div class= "col-12">
-                <form class="form-inline my-2 my-md-0" method="get" action="{% url 'survey:search' %}">
+                <form class="form-inline my-2 my-md-0" method="get" action="{% url 'survey:beer_list' %}">
                     <div class="form-group mb-3 mt-5">
-                        <input type="checkbox"
+
+                        <p>1. 종류 선택</p>
+                        <label><input type="checkbox" name="category" value="흑맥주">흑맥주</label>
+                        <label><input type="checkbox" name="category" value="밀맥주">밀맥주</label>
+                        <label><input type="checkbox" name="category" value="과일맥주">과일맥주</label>
+                        <label><input type="checkbox" name="category" value="수제맥주">수제맥주</label>
+                    </div>
+                    <div class="form-group mb-3 mt-5">
+                        <p>2. 도수 입력</p>
+                        <input type="number" class="form-control form-control-sm" id="ABV1" placeholder="최저도수" name="ABV1">
+                        <input type="number" class="form-control form-control-sm" id="ABV2" placeholder="최고도수" name="ABV2">
                     </div>
 
+                    <div class="form-group mb-3 mt-5">
+                        <P>3. 산미 선택</P>
+                        <label><input type="checkbox" name="sanmi" value=1> 1</label>
+                        <label><input type="checkbox" name="sanmi" value=2> 2</label>
+                        <label><input type="checkbox" name="sanmi" value=3> 3</label>
+                        <label><input type="checkbox" name="sanmi" value=4> 4</label>
+                        <label><input type="checkbox" name="sanmi" value=5> 5</label>
+                        <label><input type="checkbox" name="sanmi" value=6> 6</label>
+                        <label><input type="checkbox" name="sanmi" value=7> 7</label>
+                        <label><input type="checkbox" name="sanmi" value=8> 8</label>
+                        <label><input type="checkbox" name="sanmi" value=9> 9</label>
+                        <label><input type="checkbox" name="sanmi" value=10> 10</label>
+                    </div>
+                        <p>4. 당도를 선택하세요</p>
+                        <label><input type="checkbox" name="sugar" value=1> 1</label>
+                        <label><input type="checkbox" name="sugar" value=2> 2</label>
+                        <label><input type="checkbox" name="sugar" value=3> 3</label>
+                        <label><input type="checkbox" name="sugar" value=4> 4</label>
+                        <label><input type="checkbox" name="sugar" value=5> 5</label>
+                        <label><input type="checkbox" name="sugar" value=6> 6</label>
+                        <label><input type="checkbox" name="sugar" value=7> 7</label>
+                        <label><input type="checkbox" name="sugar" value=8> 8</label>
+                        <label><input type="checkbox" name="sugar" value=9> 9</label>
+                        <label><input type="checkbox" name="sugar" value=10> 10</label>
 
+
+                    <button type="submit" class="btn btn-warning">검색</button>
 
 
 
