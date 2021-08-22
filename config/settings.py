@@ -71,10 +71,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sojudb',
-        'USER': 'admin',
-        'PASSWORD': 'soju1234',
-        'HOST': 'soju.c6f9olbkzmcs.ap-northeast-2.rds.amazonaws.com',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
         'PORT': '3306'
     }
 
@@ -121,10 +121,10 @@ STATIC_URL = '/static/'
 # S3를 사용할 수 있는 곳
 # 1. Static
 
-AWS_ACCESS_KEY_ID = 'AKIAXEABGLSENS25FYOK'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = '+'
 AWS_REGION = 'ap-northeast-2'
-AWS_STORAGE_BUCKET_NAME = 'soju1'
+AWS_STORAGE_BUCKET_NAME = ''
 
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
 
