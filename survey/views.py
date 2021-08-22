@@ -8,8 +8,6 @@ def search(request):
     query1 = Q()
     query2 = Q()
     query3 = Q()
-    query4 = Q()
-    query5 = Q()
     a = request.GET.getlist('category')
     b = request.GET.getlist('sanmi')
     c = request.GET.getlist('sugar')
@@ -32,7 +30,6 @@ def search(request):
         beers = beers.filter(query3)
     if d and e:
         beers = beers.filter(ABV__range=(d, e))
-
 
     return render(request, 'survey/result.html', {'beers': beers})
 

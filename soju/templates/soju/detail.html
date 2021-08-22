@@ -1,7 +1,135 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block detail %}
-<p>{{beer.name}}</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <title>LEWIS</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static 'favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="{% static 'css/main2.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header header-js">
+      <div class="header__wrapper header-wrapper-js">
+        <div class="header__left-inner">
+          <div class="header__logo-wrapper">
+            <div class="header__logo"><a href="/">Hel<i>p<span>m</span>e</i>e</a></div>
+          </div><a class="header__author-mail" href="#"></a>
+        </div>
+        <div class="header__right-inner">
+          <ul class="header__social">
+              <li class="header__social-item"><a class="header__social-link" href="{% url 'survey:beer_list' %}">제품검색</a></li>
+<!--              <li class="header__social-item"><a class="header__social-link" href="{% url 'soju:reco' %}">제품목록</a></li>-->
 
-{% endblock %}
+          </ul>
+          <div class="header__burger"><span></span></div>
+          <div class="header__menu">
+            <div class="header__menu-exit"></div>
+            <ul class="header__menu-social">
+            </ul>
+            <div class="header__menu-content">
+              <ul class="header__menu-list">
+                 <li class="header__menu-item" data-menuanchor="cases"><a class="header__menu-link" href="{% url 'survey:beer_list' %}">제품검색</a></li>
+<!--                  <li class="header__menu-item" data-menuanchor="cases"><a class="header__menu-link" href="{% url 'soju:reco' %}">제품목록</a></li>-->
 
+              </ul>
+              <ul class="header__menu-contacts">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Post-->
+        <div class="blog">
+          <div class="container-fluid">
+            <div class="blog__inner">
+              <h2 class="blog__title"></h2>
+              <div class="line blog__line"></div>
+              <div>
+                <p class="blog__text"></p>
+                <p style="font-size: 60px">{{beer.name}}</p>
+
+                <hr>
+                <div class="row">
+                  <div class="col-md-6">
+
+                    <img src={{beer.image.url}} alt="" width="100%" height="auto">
+                  </div>
+                  <!-- Developer skills-->
+                  <div class="col-md-6">
+                    <!-- Skill-->
+                    <div>
+                      <div class="services__skill-header">
+                        <div class="services__skill-title">ABV</div>
+                        <div class="services__skill-percent">{{beer.ABV}}</div>
+                      </div>
+                      <div class="services__skill-progress">
+                        <div class="services__skill-gold-line" style="width:{{beer.ABV}}%"></div>
+                        <div class="services__skill-white-line" style="width:100%"></div>
+                      </div>
+                    </div>
+                    <!-- Skill-->
+                    <div class="services__skill">
+                      <div class="services__skill-header">
+                        <div class="services__skill-title">SUGAR</div>
+                        <div class="services__skill-percent">{{beer.sugar}}</div>
+                      </div>
+                      <div class="services__skill-progress">
+                        <div class="services__skill-gold-line" style="width:{{beer.sugar}}%"></div>
+                        <div class="services__skill-white-line" style="width:100%"></div>
+                      </div>
+                    </div>
+                    <!-- Skill-->
+                    <div class="services__skill">
+                      <div class="services__skill-header">
+                        <div class="services__skill-title">Malty</div>
+                        <div class="services__skill-percent">{{beer.sanmi}}</div>
+                      </div>
+                      <div class="services__skill-progress">
+                        <div class="services__skill-gold-line" style="width:{{beer.sanmi}}%"></div>
+                        <div class="services__skill-white-line" style="width:100%"></div>
+                      </div>
+                    </div>
+                    <!-- Skill-->
+                    <div class="services__skill">
+                      <div class="services__skill-header">
+                        <div class="services__skill-title">INCENSE</div>
+                        <div class="services__skill-percent">{{beer.s}}</div>
+                      </div>
+                      <div class="services__skill-progress">
+                        <div class="services__skill-gold-line" style="width:{{beer.s}}%"></div>
+                        <div class="services__skill-white-line" style="width:100%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="blog__text--big blog__text--big--mt-70">{{beer.metadescription}}</p>
+                <p class="blog__text blog__text--mt-120">{{beer.description}}</p>
+                <p class="blog__text"></p>
+                <div class="blog__img-wrap"><input type="button" class="btn btn-secondary btn-lg" tabindex="-1" role="button" aria-disabled="true" value="뒤로가기" onclick="history.back(-1);"> </div>
+                <!-- Author of the post info-->
+                <div class="blog-more blog__more">
+                  <div class="blog-more__author"> <span class="blog-more__author-text">SJ company</span><span class="blog-more__author-name">Product by : 살려조</span></div>
+                </div>
+              </div>
+              <div class="line blog__line blog__line--mt-70"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="{% static 'js/libs.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

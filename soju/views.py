@@ -3,7 +3,7 @@ from .models import *
 
 
 def home_url(request):
-    beers = Beer.objects.filter(category='test')
+    beers = Beer.objects.all()
     return render(request, 'soju/index.html', {'beers':beers})
 
 

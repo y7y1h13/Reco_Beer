@@ -9,14 +9,15 @@
             <div class="cases__play-animation-left"></div>
             <div class="cases__container">
               <div class="cases__row-wrapper">
-                <div class="cases__row js-cases-row">
+                <div class="cases__row js-cases-row" >
                   <!-- Case card-->
-                    {% for b in beers %}
+                  {% for b in beers %}
                     <a class="cases__card js-cases-card" href="{{b.get_absolute_url}}">
                     <div class="cases__text">
-                      <div class="cases__card-name">{{ b.name }}</div>
-                    </div><img class="cases__card-img" src="{{ b.image.url }}" alt="img"></a>
-                    {% endfor %}
+
+                    </div><img class="cases__card-img" src="{{ b.image.url }}" alt="img" >
+                    </a>
+                  {% endfor %}
 
                 </div>
               </div>

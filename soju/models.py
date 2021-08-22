@@ -14,7 +14,7 @@ class Beer(models.Model):
     # 간단한 설명
     meta_description = models.CharField(max_length=40, null=True, blank=True)
     # 도수를 소수점으로 나타낸다. 10의자리까지 소수아래 한자리까지만
-    ABV = models.DecimalField(max_digits=2, decimal_places=1, blank=True)
+    ABV = models.DecimalField(max_digits=6, decimal_places=1, blank=True)
     # 당도를 숫자로 나타낸다. 양의 정수만 가능함
     sugar = models.PositiveIntegerField(blank=True)
     # 산미

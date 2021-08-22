@@ -146,7 +146,7 @@ body {
   margin: auto;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 767px) {
   .container-fluid {
     max-width: calc(100% - 50px);
   }
@@ -2165,7 +2165,7 @@ body {
 }
 
 .cases__card:hover {
-  cursor: url("../img/cases/cursor.jpg") 62 62, pointer;
+  cursor: url("../img/cases/asdf.png") 62 62, pointer;
 }
 
 .cases__card:hover img {
@@ -2182,8 +2182,6 @@ body {
   position: absolute;
   bottom: 40px;
   left: 70px;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
   -webkit-transform-origin: left;
           transform-origin: left;
   width: 74.53704vh;
@@ -2224,7 +2222,7 @@ body {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  opacity: 0;
+  opacity: 1;
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -2947,5 +2945,23 @@ body {
   pointer-events: none;
   opacity: .2;
 }
+.head {
+  position: relative;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: large !important;
+  margin: 1px !important;
+}
+.head_img {
+  opacity: 0.7;
+}
 
-/*# sourceMappingURL=maps/main.css.map */
+.head_text {
+  position: absolute !important;
+  font-size: xx-large !important;
+  text-align: center !important;
+  padding: 5px !important;
+  border: 2px solid white !important;
+  opacity: 1 !important;
+}

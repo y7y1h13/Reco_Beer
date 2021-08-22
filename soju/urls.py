@@ -5,9 +5,8 @@ from .views import *
 app_name = 'soju'
 
 urlpatterns = [
-    path('', home_url, name='home'),
-    #pk값을 뒤에 붙여서 상세페이지 찾기
-    path('<beer_name>/', beerDetail, name='beerDetail'),
+    path('', home_url, name='home_url'),
     path('reco/', reco_url, name='reco'),
+    path('<beer_name>/', beerDetail, name='beerDetail'),
 
 ]
